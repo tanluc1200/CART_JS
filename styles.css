@@ -19,6 +19,7 @@ body {
   color: black;
   background-color: white;
   font-size: 16rem;
+  transition: all 0.5s ease-in-out;
 }
 body.active {
   padding-right: 370rem;
@@ -28,11 +29,19 @@ body.active {
   margin-inline: auto;
 }
 .header-row {
-  padding-block: 20rem;
+  position: sticky;
+  top: 0;
+  padding: 20rem;
+  left: 0;
+  right: 0;
+  background-color: white;
+  margin-inline: -20px;
+}
+.header-row .content {
   display: flex;
   align-items: center;
   column-gap: 50rem;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 }
 .header-row-icon {
   position: relative;
@@ -59,6 +68,7 @@ body.active {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 1fr;
   gap: 20rem;
+  padding-block: 20px 50px;
 }
 .header-product-item {
   border-radius: 5px;
@@ -90,11 +100,76 @@ body.active {
   font-size: 18rem;
   border-radius: 5rem;
 }
+.cart.active {
+  transform: translateX(0);
+}
 .cart {
+  transition: all 0.5s ease-in-out;
+  transform: translateX(110%);
+  z-index: 100;
+  padding: 10rem 20rem;
   position: fixed;
+  display: flex;
+  flex-direction: column;
   right: 0;
   top: 0;
   bottom: 0;
-  width: 500rem;
-  background-color: darkkhaki;
+  width: 550rem;
+  background-color: rgb(189, 183, 107, 0.8);
+  backdrop-filter: blur(10px);
+}
+.cart-item {
+  display: grid;
+  grid-template-columns: 50rem 140rem repeat(2, 1fr);
+  column-gap: 10px;
+  align-items: center;
+}
+.cart-item img {
+  height: 50rem;
+  width: 50rem;
+  object-fit: cover;
+}
+.checkOut {
+  margin-block: auto -20rem;
+  display: flex;
+  margin-inline: -20rem;
+}
+.total,
+.closeShopping {
+  flex: 1;
+  padding: 20px 20px 30px;
+  text-align: center;
+  font-weight: 900;
+}
+.closeShopping {
+  background-color: orangered;
+  color: black;
+}
+.total {
+  background-color: #9acd32;
+}
+.cart-quantity {
+  display: flex;
+  align-items: center;
+  column-gap: 10rem;
+}
+.cart-quantity button {
+  background-color: #ccc;
+  width: 40px;
+  height: 40px;
+}
+.listCart {
+  padding-block: 20rem 10rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.count {
+  min-width: 30rem;
+  text-align: center;
+}
+.cart-delete {
+  color: black;
+  width: 30px;
+  height: 30px;
 }
