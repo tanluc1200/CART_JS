@@ -30,6 +30,7 @@ body.active {
 }
 .header-row {
   position: sticky;
+  z-index: 100;
   top: 0;
   padding: 20rem;
   left: 0;
