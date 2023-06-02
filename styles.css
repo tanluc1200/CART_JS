@@ -30,19 +30,20 @@ body.active {
 }
 .header-row {
   position: sticky;
-  z-index: 100;
+  z-index: 99;
   top: 0;
-  padding: 20rem;
   left: 0;
   right: 0;
-  background-color: white;
+
   margin-inline: -20px;
 }
 .header-row .content {
   display: flex;
+  padding: 20rem;
   align-items: center;
   column-gap: 50rem;
   justify-content: space-between;
+  background-color: white;
 }
 .header-row-icon {
   position: relative;
